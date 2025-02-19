@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3PSCOM - Polarization, Populism and Post-Truth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f8f9fa; }
+        .container { max-width: 1200px; margin-top: 20px; }
+        header { background: #7c0d18; color: white; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; }
+        footer { background: #7c0d18; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        .profile-img { max-width: 250px; border-radius: 5px; }
+        .card { margin-bottom: 15px; border: none; }
+        h2 { color: #7c0d18; }
+        #map { height: 500px; width: 100%; border-radius: 10px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        3PSCOM - Polarization, Populism and Post-Truth
+    </header>
+    <div class="container">
+        <section>
+            <h2>Who We Are</h2>
+            <p>We are an international network of researchers from more than 20 countries that study social and political debates in social media with big data techniques and social network analysis.</p>
+        </section>
+        <section>
+            <h2>Our Aim</h2>
+            <p>We analyze three structural phenomena in democratic societies: Polarization, Populism and Post-truth (the three P's). Specifically, we focus on digital public debate processes during electoral campaigns and social discussions.</p>
+            <ul>
+                <li>Define digital polarization, online populism and post-truth in theoretical terms.</li>
+                <li>Develop Social Network Analysis tools to measure the three phenomena.</li>
+                <li>Analyze these processes in case studies across America, Europe, Asia, and Oceania.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Members</h2>
+            <div class="card p-3 shadow-sm">
+                <h5 class="card-title">Co-Directors</h5>
+                <p class="card-text">José Manuel Robles & Belén Casas-Mas (Complutense University of Madrid, Spain)</p>
+            </div>
+            <div class="card p-3 shadow-sm">
+                <h5 class="card-title">Computational Coordinator</h5>
+                <p class="card-text">Juan Antonio Guevara</p>
+            </div>
+        </section>
+
+        <!-- Mapa Interativo -->
+        <section>
+            <h2>Institutions & Researchers Map</h2>
+            <div id="map"></div>
+        </section>
+
+<section>
+    <h2>Contacts by Region</h2>
+    <div class="row">
+        <!-- America -->
+        <div class="col-md-6">
+            <h5>America</h5>
+            <p><strong>Coordinator:</strong> Ana Maria Cordoba Hernandez (Universidad de la Sabana, Colombia)</p>
+            <ul>
+                <li><strong>Ana Maria Cordoba Hernandez</strong> - Universidad de la Sabana, Colombia</li>
+                <li><strong>Víctor Manuel García Perdomo</strong> - Universidad de la Sabana, Colombia</li>
+                <li><strong>María Paula Arbeláez Linares</strong> - Universidad de la Sabana, Colombia</li>
+                <li><strong>João Feres Júnior</strong> - State University of Rio de Janeiro – UERJ, Brazil</li>
+                <li><strong>Ana Trevisan</strong> - University of São Paulo (USP) & Universidade NOVA de Lisboa, Brazil/Portugal</li>
+                <li><strong>Allan Herison</strong> - University of São Paulo (USP) & Universidade NOVA de Lisboa, Brazil/Portugal</li>
+                <li><strong>Liliana Paz González Zaror</strong> - Independent Researcher, Chile</li>
+                <li><strong>Pamela Menéndez Cóndor</strong> - University Complutense of Madrid (UCM), Peru</li>
+                <li><strong>Julio Mejía Navarrete</strong> - Independent Researcher, Peru</li>
+                <li><strong>Rosa Elba Arroyo Alvarez</strong> - UNAM, Mexico</li>
+                <li><strong>Hernando Rojas</strong> - University of Wisconsin-Madison, USA</li>
+            </ul>
+        </div>
+
+        <!-- Europe -->
+        <div class="col-md-6">
+            <h5>Europe</h5>
+            <p><strong>Coordinators:</strong> Adriana Stefanel (Romania), Arturo Rodríguez Saez (Spain)</p>
+            <ul>
+                <li><strong>Adriana Stefanel</strong> - University of Bucharest, Romania</li>
+                <li><strong>Romina Surugiu</strong> - University of Bucharest, Romania</li>
+                <li><strong>Jacek Sokołowski</strong> - Jagiellonian University, Poland</li>
+                <li><strong>Błażej Sajduk</strong> - Jagiellonian University, Poland</li>
+                <li><strong>Wojciech Słomczyński</strong> - Jagiellonian University, Poland</li>
+                <li><strong>Prof. Nechayeva-Yuriychuk</strong> - Yurii Fedkovych Chernivtsi National University, Ukraine</li>
+                <li><strong>Natasa Simeunovic Bajic</strong> - University of Niš, Serbia</li>
+                <li><strong>Ilija Milosavljević</strong> - University of Niš, Serbia</li>
+                <li><strong>Nikola Doder</strong> - University of Niš, Serbia</li>
+                <li><strong>Ralitsa Kovacheva</strong> - Sofia University "St. Kliment Ohridski", Bulgaria</li>
+                <li><strong>Belén Casas-Mas</strong> - Complutense University of Madrid (UCM), Spain</li>
+                <li><strong>Arturo Rodríguez Saez</strong> - Universidad Internacional de La Rioja (UNIR), Spain</li>
+                <li><strong>Prof. Dr. Simon Kühne</strong> - Bielefeld University, Germany</li>
+                <li><strong>Stefan Knauff</strong> - Bielefeld University, Germany</li>
+                <li><strong>Dorian Tsolak</strong> - Bielefeld University, Germany</li>
+                <li><strong>Pedro Fonseca</strong> - Universidade de Lisboa, Portugal</li>
+                <li><strong>Eduardo Barbarela</strong> - Universidade de Lisboa, Portugal</li>
+                <li><strong>Andressa Liegi Vieira Costa</strong> - Universidade de Lisboa, Portugal</li>
+                <li><strong>Sónia Sebastião</strong> - Universidade de Lisboa, Portugal</li>
+                <li><strong>Biagio Aragona</strong> - Università di Napoli Federico II, Italy</li>
+                <li><strong>Marco Damiani</strong> - Università di Perugia, Italy</li>
+                <li><strong>Yannis Stavrakakis</strong> - Aristotle University of Thessaloniki, Greece</li>
+                <li><strong>Giorgos Katsambekis</strong> - Panteion University of Social and Political Sciences, Greece</li>
+                <li><strong>Turkay Salim Nefes</strong> - University of Oxford, United Kingdom</li>
+            </ul>
+        </div>
+
+        <!-- Asia -->
+        <div class="col-md-6">
+            <h5>Asia</h5>
+            <p><strong>Coordinator:</strong> Zeyu Lyu (Japan)</p>
+            <ul>
+                <li><strong>Zeyu Lyu</strong> - Tohoku University, Japan</li>
+                <li><strong>Haohan Chen</strong> - The University of Hong Kong, Hong Kong</li>
+            </ul>
+        </div>
+
+        <!-- Australia -->
+        <div class="col-md-6">
+            <h5>Australia</h5>
+            <p><strong>Coordinator:</strong> Robert Ackland</p>
+            <ul>
+                <li><strong>Robert Ackland</strong> - The Australian National University, Australia</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+        <section>
+            <h2>International Conferences</h2>
+            <p>Organizer of the invited session "Big Data and Social Network Analysis for the 3 P's Processes: Polarization, Populism and Post-Truth" at the 5th ISA Forum, Rabat, 2025.</p>
+        </section>
+        <section>
+            <h2>Events</h2>
+            <p>Analysis and dissemination of scientific events related to 3PSCOM, including the "Science and Society" event in Madrid, Spain.</p>
+        </section>
+        <section>
+            <h2>Publications</h2>
+            <p>Latest research and scientific articles from the 3PSCOM project.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 3PSCOM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var map = L.map('map').setView([20, 0], 2); // Mapa inicial
+
+        // Camada do OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Lista de locais e responsáveis
+var locations = [
+    { lat: 4.637, lon: -74.085, institution: "Universidad de la Sabana", contact: "Ana Maria Cordoba Hernandez", country: "Colômbia" },
+    { lat: 4.637, lon: -74.085, institution: "Universidad de la Sabana", contact: "Víctor Manuel García Perdomo", country: "Colômbia" },
+    { lat: 4.637, lon: -74.085, institution: "Universidad de la Sabana", contact: "María Paula Arbeláez Linares", country: "Colômbia" },
+
+    { lat: -22.9068, lon: -43.1729, institution: "State University of Rio de Janeiro – UERJ", contact: "João Feres Júnior", country: "Brasil" },
+    { lat: -23.5615, lon: -46.7308, institution: "University of São Paulo (USP)", contact: "Ana Trevisan", country: "Brasil" },
+    { lat: -23.5615, lon: -46.7308, institution: "University of São Paulo (USP)", contact: "Allan Herison Ferreira", country: "Brasil" },
+
+    { lat: -33.4489, lon: -70.6693, institution: "Independent Researcher", contact: "Liliana Paz González Zaror", country: "Chile" },
+
+    { lat: -12.0464, lon: -77.0428, institution: "University Complutense of Madrid (UCM)", contact: "Pamela Menéndez Cóndor", country: "Peru" },
+    { lat: -12.0464, lon: -77.0428, institution: "Independent Researcher", contact: "Julio Mejía Navarrete", country: "Peru" },
+
+    { lat: 19.4326, lon: -99.1332, institution: "UNAM", contact: "Rosa Elba Arroyo Alvarez", country: "México" },
+
+    { lat: 43.0731, lon: -89.4012, institution: "University of Wisconsin-Madison", contact: "Hernando Rojas", country: "USA" },
+
+    { lat: 44.4268, lon: 26.1025, institution: "University of Bucharest", contact: "Adriana Stefanel", country: "Romênia" },
+    { lat: 44.4268, lon: 26.1025, institution: "University of Bucharest", contact: "Romina Surugiu", country: "Romênia" },
+
+    { lat: 50.0614, lon: 19.9366, institution: "Jagiellonian University", contact: "Jacek Sokołowski", country: "Polônia" },
+    { lat: 50.0614, lon: 19.9366, institution: "Jagiellonian University", contact: "Błażej Sajduk", country: "Polônia" },
+    { lat: 50.0614, lon: 19.9366, institution: "Jagiellonian University", contact: "Wojciech Słomczyński", country: "Polônia" },
+
+    { lat: 48.2922, lon: 25.9358, institution: "Yurii Fedkovych Chernivtsi National University", contact: "Prof. Nechayeva-Yuriychuk", country: "Ucrânia" },
+
+    { lat: 43.3194, lon: 21.8969, institution: "University of Niš", contact: "Natasa Simeunovic Bajic", country: "Sérvia" },
+    { lat: 43.3194, lon: 21.8969, institution: "University of Niš", contact: "Ilija Milosavljević", country: "Sérvia" },
+    { lat: 43.3194, lon: 21.8969, institution: "University of Niš", contact: "Nikola Doder", country: "Sérvia" },
+
+    { lat: 42.6977, lon: 23.3242, institution: "Sofia University 'St. Kliment Ohridski'", contact: "Ralitsa Kovacheva", country: "Bulgária" },
+
+    { lat: 40.4524, lon: -3.7282, institution: "Complutense University of Madrid (UCM)", contact: "Belén Casas-Mas", country: "Espanha" },
+    { lat: 40.4168, lon: -3.7038, institution: "Universidad Internacional de La Rioja (UNIR)", contact: "Arturo Rodríguez Saez", country: "Espanha" },
+
+    { lat: 52.0302, lon: 8.5325, institution: "Bielefeld University", contact: "Prof. Dr. Simon Kühne", country: "Alemanha" },
+    { lat: 52.0302, lon: 8.5325, institution: "Bielefeld University", contact: "Stefan Knauff", country: "Alemanha" },
+    { lat: 52.0302, lon: 8.5325, institution: "Bielefeld University", contact: "Dorian Tsolak", country: "Alemanha" },
+
+    { lat: 38.7076, lon: -9.1901, institution: "Universidade de Lisboa", contact: "Pedro Fonseca", country: "Portugal" },
+    { lat: 38.7077, lon: -9.1900, institution: "Universidade de Lisboa", contact: "Eduardo Barbarela", country: "Portugal" },
+    { lat: 38.7168, lon: -9.1902, institution: "Universidade de Lisboa", contact: "Andressa Liegi Vieira Costa", country: "Portugal" },
+    { lat: 38.7169, lon: -9.1399, institution: "Universidade de Lisboa", contact: "Sónia Sebastião", country: "Portugal" },
+
+    { lat: 38.7168, lon: -9.1425, institution: "Universidade NOVA de Lisboa", contact: "Ana Carolina Trevisan", country: "Portugal" },
+    { lat: 38.7170, lon: -9.1427, institution: "Universidade NOVA de Lisboa", contact: "Allan Herison Ferreira", country: "Portugal" },
+
+
+    { lat: 40.8533, lon: 14.3056, institution: "Università di Napoli Federico II", contact: "Biagio Aragona", country: "Itália" },
+    { lat: 43.1107, lon: 12.3908, institution: "Università di Perugia", contact: "Marco Damiani", country: "Itália" },
+
+    { lat: 39.0742, lon: 21.8243, institution: "Aristotle University of Thessaloniki", contact: "Yannis Stavrakakis", country: "Grécia" },
+    { lat: 39.0742, lon: 21.8243, institution: "Panteion University of Social and Political Sciences", contact: "Giorgos Katsambekis", country: "Grécia" },
+
+    { lat: 51.752, lon: -1.2577, institution: "University of Oxford", contact: "Turkay Salim Nefes", country: "Reino Unido" },
+
+    { lat: 38.2544, lon: 140.8823, institution: "Tohoku University", contact: "Zeyu Lyu", country: "Japão" },
+
+    { lat: 22.3193, lon: 114.1694, institution: "The University of Hong Kong", contact: "Haohan Chen", country: "Hong Kong" },
+
+    { lat: -35.2809, lon: 149.1300, institution: "The Australian National University", contact: "Robert Ackland", country: "Austrália" }
+];
+
+
+        // Adiciona marcadores ao mapa
+        locations.forEach(function(loc) {
+            var marker = L.marker([loc.lat, loc.lon]).addTo(map);
+            marker.bindTooltip(`<b>${loc.institution}</b><br>${loc.contact}<br><i>${loc.country}</i>`, { permanent: false, direction: "top" });
+        });
+
+    </script>
+</body>
+</html>
